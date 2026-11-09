@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="#" th:action="@{/transactions}" th:object="${transaction}" method="post">
+    <label for="accountId">accountId</label>
+    <input type="text" th:field="*{accountId}" id="accountId" placeholder="accountId">
+    <span th:if="${#fields.hasErrors('accountId')}" th:errors="*{accountId}"></span>
+    <label for="transactionId">transactionId</label>
+    <input type="text" th:field="*{transactionId}" id="transactionId" placeholder="transactionId">
+    <span th:if="${#fields.hasErrors('transactionId')}" th:errors="*{transactionId}"></span>
+    <input type="submit" value="Add Transaction">   
+</form>
+</body>
+</html>
